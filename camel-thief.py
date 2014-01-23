@@ -13,7 +13,6 @@ camel_fatigue = 0
 natives_distance = -20
 drinks_in_canteen = 5
 
-
 print "Welcome to Camel!"
 print "You have stolen a camel to make your way across the great Gobi desert!"
 print "The natives want their camel back and are chasing you down! Survive your"
@@ -67,30 +66,37 @@ while not done:
 	
 	elif user_choice == "Q":
 		done = True
+		
 	elif user_choice == "E":
 		print "\nMiles traveled:", miles_traveled
 		print "Drinks in canteen:", drinks_in_canteen
-		print "The natives are %s miles behind you." % abs(natives_distance)
+		print "The natives are %s miles behind you." % abs(miles_traveled - abs(natives_distance))
+		
 	elif user_choice == "D":
 		camel_fatigue = 0
-		natives_distance += abs(randint(4, 10))
+		natives_distance += randint(4, 10)
 		print "The camel is happy and rested."
+		
 	elif user_choice == "C":
 		miles_traveled += randint(10, 20)
 		camel_fatigue += randint(1,3)
-		natives_distance += abs(randint(7, 14))
+		natives_distance += randint(7, 14)
 		thirst += 1
+		
 	elif user_choice == "B":
 		miles_traveled += randint(5,12)
 		camel_fatigue += 1
-		natives_distance += abs(randint(7,14))
+		natives_distance += randint(7,14)
 		thirst += 1
+		
 	elif user_choice == "A":
 		if drinks_in_canteen <= 0:
 			print "There are no drinks left in the canteen."
+			
 		elif drinks_in_canteen >= 1:
 			drinks_in_canteen -= 1
 			thirst = 0
+			
 	else:
 		print "\nPlease make a valid selection"
 
