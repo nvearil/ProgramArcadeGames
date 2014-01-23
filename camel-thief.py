@@ -21,25 +21,31 @@ print "desert trek and outrun the natives."
 
 while not done:
 
-	print "\nA. Drink from your canteen."
-	print "B. Ahead moderate speed."
-	print "C. Ahead full speed."
-	print "D. Stop for the night."
-	print "E. Status check."
-	print "Q. Quit."
-	
-	user_choice = str(raw_input("\nMake a selection:")).upper()
-
 	if miles_traveled >= 200:
 		print "\nYou've escaped from the natives!\n"
 		done = True
-	
+
 	elif randint(1,100) > 95:
 		drinks_in_canteen = 5
 		thirst = 0
 		camel_fatigue = 0
 		print "\nYou have found an oasis! Be sure to fill your canteen!\n"
+		print "\nA. Drink from your canteen."
+		print "B. Ahead moderate speed."
+		print "C. Ahead full speed."
+		print "D. Stop for the night."
+		print "E. Status check."
+		print "Q. Quit."
+		user_choice = str(raw_input("\nMake a selection:")).upper()
 		
+	else:
+		print "\nA. Drink from your canteen."
+		print "B. Ahead moderate speed."
+		print "C. Ahead full speed."
+		print "D. Stop for the night."
+		print "E. Status check."
+		print "Q. Quit."
+		user_choice = str(raw_input("\nMake a selection:")).upper()
 	    
 	if natives_distance >= miles_traveled:
 		print "\nYou have been caught by the natives!\n"
@@ -87,6 +93,5 @@ while not done:
 			thirst = 0
 	else:
 		print "\nPlease make a valid selection"
-
 
 print "Thank you for playing!"
